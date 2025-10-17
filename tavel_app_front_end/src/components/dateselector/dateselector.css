@@ -1,0 +1,7 @@
+.search-dest{
+    font-size: 0.75rem;
+    border:none;
+}
+.search-dest:focus{
+    outline:none;
+}

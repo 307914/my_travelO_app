@@ -1,0 +1,14 @@
+.starrating-span{
+    padding:20px 16px;
+    border:1px solid var(--container-border-color);
+    margin-right:8px;
+    border-radius:4px;
+
+}
+.starrating-span:hover{
+background-color: black;
+color:var(--background-color);
+}
+.star-prop{
+    margin-top:20px;
+}

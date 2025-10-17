@@ -1,0 +1,14 @@
+.property-span{
+    display:inline-flex;
+    padding:28px 16px;
+    border:1px solid var(--container-border-color);
+    margin-right:8px;
+    border-radius:4px;
+}
+.property-span:hover{
+    color:var(--background-color);
+    background-color: var(--text-color-primary);
+}
+.properties{
+    margin-top:7px;
+}

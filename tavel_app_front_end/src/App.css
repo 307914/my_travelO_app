@@ -1,0 +1,25 @@
+@import url('https://uilight.netlify.app/main.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+:root {
+  --background-color: #fafafa;
+  --primary-color: #ff6525;
+  --text-color-primary: #363030;
+  --accent-color: #d2d2d2;
+  --container-border-color: #707070;
+  --overlay: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+}

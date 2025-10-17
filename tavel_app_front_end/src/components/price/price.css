@@ -1,0 +1,66 @@
+
+.rupee{
+    font-size: 20px;
+}
+.price-container-single{
+    margin-left:auto;
+    margin-top:35px;
+    width:25rem;
+    padding:2rem 2rem 2rem 2rem;
+}
+.day-font{
+    font-size: 15px;
+    gap:10px;
+}
+.star-container{
+    margin-left:auto;
+    display:flex;
+    align-items: center;
+    gap:8px;
+}
+.rating{
+    color:rgb(56, 56, 56);
+}
+.loc-container{
+    justify-content: space-between;
+    margin:1rem 0;
+}
+.guests-container{
+    border:1px solid var(--container-border-color);
+    padding:10px 15px;
+    text-align: left;
+    color:rgb(117, 116, 116);
+    margin-top:25px;
+}
+.date-search{
+    border:none;
+    background-color: var(--background-color);
+}
+.date-search:focus{
+    outline:none;
+}
+.btn-reserve{
+height:4rem;
+margin-top:25px;
+background-color: var(--primary-color);
+font-size: 20px;
+color:white;
+border:none;
+border-radius:5px;
+}
+.price-checkout{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    margin:30px 10px;
+}
+.cal-container{
+display: flex;
+justify-content: space-between;
+color:rgb(84, 83, 83);
+font-size: 15px;
+}
+.border-btm{
+    margin-top: 10px;
+    border-bottom:1px solid var(--container-border-color);
+}

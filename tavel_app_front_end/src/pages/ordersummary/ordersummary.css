@@ -1,0 +1,27 @@
+
+.nav-head{
+    position: fixed;
+    top:2rem;
+    z-index:4rem;
+}
+.button.btn-shoping{
+    padding:10px 20px;
+    background-color: var(--primary-color);
+    margin-left:4rem;
+    color:white;
+    margin-top:1rem;
+    font-weight: 700;
+}
+.booked-tag{
+    position: fixed;
+    z-index:5;
+    top:6rem;
+    background-color: var(--background-color);
+    width:100%;
+    font-size: 30px;
+    padding: 0 4rem;
+    color:var(--primary-color);
+}
+.hotel-div{
+    padding:10rem 2rem 2rem 2rem ;
+}

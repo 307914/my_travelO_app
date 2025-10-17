@@ -1,0 +1,8 @@
+.main-method{
+    display:flex;
+    padding:11rem 2rem 2rem 2rem;
+    flex-wrap: wrap;
+}
+.end-msg .loading{
+    text-align: center;
+}

@@ -1,0 +1,30 @@
+.bedsandrooms{
+    gap:15px;
+}
+.beds{
+    display: inline-flex;
+    border:1px solid var(--container-border-color);
+   padding:4px 12px;
+    margin-right:10px;
+    border-radius:5px;
+    
+}
+.beds:hover{
+color:var(--background-color);
+background-color:var(--text-color-primary);
+}
+.select{
+  color:var(--background-color);
+background-color:var(--text-color-primary);  
+}
+.labels{
+    flex-direction: column;
+}
+.span-label{
+    padding:6px 0;
+    opacity:0.8;
+    font-size: 1.25rem
+}
+.rooms{
+    margin-bottom:7px;
+}

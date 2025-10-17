@@ -1,0 +1,47 @@
+
+
+.auth-user{
+padding:1rem;
+font-size: 1.5rem;
+border-bottom: 0.5px solid var(--overlay);
+}
+
+.auth-label{
+padding:0.4rem;
+opacity: 0.8;
+font-size: 18px;
+}
+.auth-input:focus{
+    outline:none;
+}
+.asterk{
+    color:var(--primary-color);
+}
+.auth-input{
+    padding:1rem 0;
+    width:100%;
+    opacity:0.7;
+    border:none;
+}
+.button.btn-submit{
+    padding:1rem;
+    background-color: var(--primary-color);
+    font-size:normal;
+    width:100%;
+    margin-bottom: 1rem;
+    color:white;
+}
+.auth-modal-sl{
+    padding: 0.5rem;
+}
+.auth-modal-login{
+    padding:1rem;
+}
+.btn-con{
+    padding:1rem;
+}
+.button.btn-submit:hover{
+    cursor: pointer;
+    color:white;
+    background-color: var(--primary-color);
+}
