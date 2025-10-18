@@ -1,12 +1,14 @@
 import axios from 'axios';
 export const axiosInstance = axios.create({
-  baseURL: '',
+  baseURL: 'http://localhost:3500',
   withCredentials: true,
 });
 
 export const END_POINTS = {
   HOTELS: {
     GETHOTELS: '/api/gethotels',
+    CATEGORY: '/api/gethotels/categories',
+    CATEGORYADD: '/api/categoryadd',
   },
   WISHLIST: {
     ADDTOWISHLIST: '/user/addtowishlist',

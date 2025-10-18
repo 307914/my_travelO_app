@@ -15,10 +15,10 @@ import { OrderSummary } from './pages/ordersummary/ordersummary';
 import Toast from './toast';
 
 function App() {
-  const { makeRequest } = useApi(END_POINTS.USER.LOGINVIACOOKIE);
-  useEffect(() => {
-    makeRequest();
-  }, []);
+  // const { makeRequest } = useApi(END_POINTS.USER.LOGINVIACOOKIE);
+  // useEffect(() => {
+  //   makeRequest();
+  // }, []);
   return (
     <>
       <Toast />

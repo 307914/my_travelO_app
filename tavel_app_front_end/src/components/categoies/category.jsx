@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import axios from "axios"
 import './category.css'
 import { ArrowLeftCircle, ArrowRightCircle, Funnel } from "react-bootstrap-icons";
-import { useCategory, useFilter } from "../../context";
+import { useCategory, useDate, useFilter, useUserdata } from "../../context";
+import { useApi } from "../../useApi";
+import { axiosInstance, END_POINTS, REQUEST_TYPES } from "../../axiosInstance";
+
 
 export const CategoryCard = () => {
+    const { makeRequest } = useApi(END_POINTS.HOTELS.CATEGORYADD, REQUEST_TYPES.POST);
     const [categories, setCategories] = useState([]);
     const [pages, setPages] = useState(0);
     const { state, setState } = useCategory()
@@ -13,7 +17,8 @@ export const CategoryCard = () => {
     useEffect(() => {
         (async () => {
             try {
-                const { data } = await axios.post("http://localhost:3500/api/categoryadd");
+                const { data } = await axiosInstance.post(END_POINTS.HOTELS.CATEGORYADD);
+                console.log({ data });
                 const showData = data.slice(
                     pages + 10 > data.length ? data.length - 10 : pages,
                     pages + 10
@@ -23,8 +28,9 @@ export const CategoryCard = () => {
                 console.log("the erros is in category useEffect", error);
             }
         })();
+    }, [])
 
-    }, [pages])
+
     const handleshowright = () => {
         setPages(prev => prev + 10);
     }
@@ -50,11 +56,11 @@ export const CategoryCard = () => {
 
                 </button>}
             {
-                categories.map(({ _id, category }) => (
+                categories?.map(({ _id, category }) => (
                     <span key={_id} className={`${category === state ? "btn-bottom" : ""}`} onClick={() => handlecategory(category)}>{category}</span>
                 ))
             }
-            {pages - 10 < categories.length &&
+            {pages - 10 < categories?.length &&
                 <button onClick={handleshowright} className="category-btn">
                     <ArrowRightCircle className="arrow-right btns-arrow" size={30} />
 

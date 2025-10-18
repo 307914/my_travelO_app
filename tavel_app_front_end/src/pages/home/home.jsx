@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { END_POINTS, REQUEST_TYPES } from '../../axiosInstance';
+import { axiosInstance, END_POINTS, REQUEST_TYPES } from '../../axiosInstance';
 import { AuthModal, CategoryCard, Hotel, Navbar, SearchStayWithDate } from '../../components';
 import InfiniteScroll from 'react-infinite-scroll-component'
-import UseApi from '../../useApi';
+import UseApi, { useApi } from '../../useApi';
 
 
 import './hone.css'
@@ -15,6 +15,7 @@ export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(16);
   const [testData, setTestData] = useState([]);
   const [hotels, setHotels] = useState([]);
+  const { makeRequest } = useApi(END_POINTS.HOTELS.CATEGORY);
   const { state, setState, single, setSingle } = useCategory();
   const { ismodalopen } = useDate();
   const { pricerange, isfilteropen, propertytype, iscancelable, ratingNumber, noOfBathrooms, noOfBeds, noOfBedrooms } = useFilter();
@@ -22,13 +23,25 @@ export const Home = () => {
   const { isAuthOpen } = useAuth();
 
   useEffect(() => {
+    // (async () => {
+    //   try {
+    //     const { data } = await axios.get(`http://localhost:3500/api/gethotels/categories?category=${state}`);
+    //     setTestData(data);
+    //     setHotels(data ? data.slice(0, 16) : []);
+    //   } catch (error) {
+    //     console.log("the error is in home", error);
+    //   }
+    // })()
     (async () => {
       try {
-        const { data } = await axios.get(`http://localhost:3500/api/gethotels/categories?category=${state}`);
+        const data = (await axiosInstance.get(END_POINTS.HOTELS.CATEGORY, {
+          params: { state }
+        }
+        )).data;
         setTestData(data);
         setHotels(data ? data.slice(0, 16) : []);
       } catch (error) {
-        console.log("the error is in home", error);
+        console.log("error is in home useeffect", error);
       }
     })()
   }, [state])
