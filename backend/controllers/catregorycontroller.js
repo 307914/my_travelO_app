@@ -2,11 +2,12 @@ const Category = require('../model/category.model');
 const HotelModel = require('../model/hotel.model');
 
 const categoryHandler = async (req, res) => {
-  const categories = req.query.category;
+  const { state } = req.query;
+  console.log({ state });
   try {
     let hotels;
-    if (categories) {
-      hotels = await Category.find({ category: categories });
+    if (state) {
+      hotels = await Category.find({ category: state });
     } else {
       hotels = await Category.find({});
     }

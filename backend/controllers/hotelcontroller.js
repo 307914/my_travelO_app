@@ -13,7 +13,7 @@ const hotelHandler = async (req, res) => {
 
 const getHotelscategory = async (req, res) => {
   try {
-    const newcategory = req.query.category;
+    const newcategory = req.query.state;
     console.log('the newcategory is', newcategory);
     const hotels = await HotelModel.find({ category: newcategory });
     if (hotels) {
