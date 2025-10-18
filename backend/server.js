@@ -12,14 +12,14 @@ const singleRouter = require('./routes/singlehotel.router');
 const whishlistRouter = require('./routes/whishlist.router');
 const cookieparser = require('cookie-parser');
 const cors = require('cors');
+const path = require('path');
 const errorHandler = require('./errorhandler');
 
 const app = express();
-const PORT = 3500;
+const PORT = process.env.PORT || 3500;
 
 app.use(
   cors({
-    origin: 'http://localhost:3000',
     credentials: true,
   })
 );
@@ -34,8 +34,13 @@ app.use('/api/whishlist', whishlistRouter);
 
 app.use('/user', createUser);
 
+app.use('/', express.static(path.join(__dirname, 'build')));
+app.use('/{*splat}', (req, res) => {
+  res.sendFile(path.join(__dirname, './build/index.html'));
+});
+
 app.use(errorHandler);
 
-app.listen(process.env.PORT || PORT, () => {
-  console.log('server is  running');
+app.listen(PORT, () => {
+  console.log(`server is  running  on ${PORT}`);
 });
